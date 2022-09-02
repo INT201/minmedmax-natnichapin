@@ -1,30 +1,25 @@
 const { template } = require('@babel/core')
 
 function minMedMax(n1, n2, n3) {
-  let object ={Min:undefined,Med:undefined,Max:n1}
-  let arg = [n1,n2,n3]
-
-  for(let i=0 ;i<arg.length;i++){
-      let object ={Min:undefined,Med:undefined,Max:undefined}
-      let arg = [n1,n2,n3]
-      object.Max = arg[0]
-      object.Min = arg[0]
-      for (let i = 0; i < arg.length; i++){
-          if(arg[i]>object.Max){
-              object.Max = arg[i]
-          }
-      }
-      for (let j = 0; j < arg.length; j++){
-          if(arg[j]<object.Min){
-              object.Min = arg[j]
-          }
-      }
-      for (let i = 0; i < arg.length; i++){
-          if(arg[i]!==object.Max && arg[i]!==object.Min){
-              object.Med = arg[i]
-          }
-      }
-      return object
-  }
+    let object ={min:undefined,med:undefined,max:undefined}
+    let arg = [n1,n2,n3]
+    object.max = arg[0]
+    object.min = arg[0]
+    for (let i = 0; i < arg.length; i++){
+        if(arg[i]>object.max){
+            object.max = arg[i]
+        }
+    }
+    for (let j = 0; j < arg.length; j++){
+        if(arg[j]<object.min){
+            object.min = arg[j]
+        }
+    }
+    for (let i = 0; i < arg.length; i++){
+        if(arg[i]!==object.max && arg[i]!==object.min){
+            object.med = arg[i]
+        }
+    }
+    return object
 }
 module.exports = minMedMax
