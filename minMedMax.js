@@ -1,7 +1,7 @@
 const { template } = require('@babel/core')
 
 function minMedMax(n1, n2, n3) {
-    let object ={min:undefined,med:undefined,max:undefined}
+    let object ={min:undefined,mid:undefined,max:undefined}
     let arg = [n1,n2,n3]
     object.max = arg[0]
     object.min = arg[0]
@@ -17,9 +17,10 @@ function minMedMax(n1, n2, n3) {
     }
     for (let i = 0; i < arg.length; i++){
         if(arg[i]!==object.max && arg[i]!==object.min){
-            object.med = arg[i]
+            object.mid = arg[i]
         }
     }
+
     return object
 }
 module.exports = minMedMax
